@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+<h3 class="text-center text-primary mb-5">
+  <i class="bi bi-pencil me-3" style="font-size: large"></i>Industry Updates
+</h3>
+
+<div class="mx-auto container-sm">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 bg-primary-subtle border-primary-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <div class="mb-2">
+      <label for="industry_updates_title" class="form-label text-primary"
+        >{{ form.industry_updates_title.label }}</label
+      >
+      {{form.industry_updates_title(class="form-control", type="text",
+      id="industry_updates_title")}} {% for error in
+      form.industry_updates_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="industry_updates_link" class="form-label text-primary"
+        >{{ form.industry_updates_link.label }}</label
+      >
+      {{form.industry_updates_link(class="form-control", type="text",
+      id="industry_updates_link")}} {% for error in
+      form.industry_updates_link.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="industry_updates_image" class="form-label text-primary"
+        >{{ form.industry_updates_image.label }}</label
+      >
+      {{form.industry_updates_image(class="form-control", type="text",
+      id="industry_updates_image")}} {% for error in
+      form.industry_updates_image.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    {{ form.submit(type="submit", class="mt-3 btn btn-primary")}}
+  </form>
+</div>
+
+{% endblock %}

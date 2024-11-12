@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block content %}
+<h3 class="text-center text-primary mb-5">
+  <i class="bi bi-pencil me-3" style="font-size: large"></i>Our Impact
+</h3>
+
+<div class="mx-auto container-sm">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 bg-primary-subtle border-primary-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <div class="mb-2">
+      <label for="section_count" class="form-label text-primary"
+        >{{ form.section_count.label }}</label
+      >
+      {{form.section_count(class="form-control", type="number",
+      id="section_count")}} {% for error in form.section_count.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_title" class="form-label text-primary"
+        >{{ form.section_title.label }}</label
+      >
+      {{form.section_title(class="form-control", type="text",
+      id="section_title")}} {% for error in form.section_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_suffix" class="form-label text-primary"
+        >{{ form.section_suffix.label }}</label
+      >
+      {{form.section_suffix(class="form-control", type="text",
+      id="section_suffix")}} {% for error in form.section_suffix.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_body" class="form-label text-primary"
+        >{{ form.section_body.label }}</label
+      >
+      {{form.section_body(class="form-control", type="text",
+      id="section_body")}} {% for error in form.section_body.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    {{ form.submit(type="submit", class="mt-3 btn btn-primary")}}
+  </form>
+</div>
+
+{% endblock %}

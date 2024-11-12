@@ -1,0 +1,112 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="text-center text-primary mb-5">
+  <i class="bi bi-pencil me-3" style="font-size: large"></i>About Us Section
+</h3>
+
+<div class="mx-auto container-sm mb-5">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 bg-primary-subtle border-primary-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <!-- ABOUT US SECTION -->
+    <div class="mb-2">
+      <label for="section_about_us_title" class="form-label text-primary"
+        >{{ form.section_about_us_title.label }}</label
+      >
+      {{form.section_about_us_title(class="form-control", type="text",
+      id="section_about_us_title")}} {% for error in
+      form.section_about_us_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_about_us_body" class="form-label text-primary"
+        >{{ form.section_about_us_body.label }}</label
+      >
+      {{form.section_about_us_body(class="form-control", rows=5,
+      id="section_about_us_body")}} {% for error in
+      form.section_about_us_body.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_about_us_image_path" class="form-label text-primary"
+        >{{ form.section_about_us_image_path.label }}</label
+      >
+      {{form.section_about_us_image_path(class="form-control", type="text",
+      id="section_about_us_image_path")}} {% for error in
+      form.section_about_us_image_path.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <!-- OUR MISSION SECTION -->
+    <div class="mb-2">
+      <label for="section_mission_title" class="form-label text-primary"
+        >{{ form.section_mission_title.label }}</label
+      >
+      {{form.section_mission_title(class="form-control", type="text",
+      id="section_mission_title")}} {% for error in
+      form.section_mission_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_mission_image_path" class="form-label text-primary"
+        >{{ form.section_mission_image_path.label }}</label
+      >
+      {{form.section_mission_image_path(class="form-control", type="text",
+      id="section_mission_image_path")}} {% for error in
+      form.section_mission_image_path.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <!-- OUR VISION SECTION -->
+    <div class="mb-2">
+      <label for="section_our_vision_title" class="form-label text-primary"
+        >{{ form.section_our_vision_title.label }}</label
+      >
+      {{form.section_our_vision_title(class="form-control", type="text",
+      id="section_our_vision_title")}} {% for error in
+      form.section_our_vision_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-2">
+      <label for="section_our_vision_body" class="form-label text-primary"
+        >{{ form.section_our_vision_body.label }}</label
+      >
+      {{form.section_our_vision_body(class="form-control", rows=5,
+      id="section_our_vision_body")}} {% for error in
+      form.section_our_vision_body.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <!-- OUR VALUES -->
+    <div class="mb-2">
+      <label for="section_our_values_title" class="form-label text-primary"
+        >{{ form.section_our_values_title.label }}</label
+      >
+      {{form.section_our_values_title(class="form-control", type="text",
+      id="section_our_values_title")}} {% for error in
+      form.section_our_values_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    {{ form.submit(type="submit", class="mt-3 btn btn-primary")}}
+  </form>
+</div>
+
+{% set mission_items = mission_items %} {% include
+"admin/about_us/our_mission.html" %} {% set values_items = values_items %} {%
+include "admin/about_us/our_values.html" %} {% endblock %}

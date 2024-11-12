@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block content %}
+<h3 class="text-center text-primary mb-5">
+  <i class="bi bi-pencil me-3" style="font-size: large"></i>Leadership
+</h3>
+
+<div class="mx-auto container-sm">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 bg-primary-subtle border-primary-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <div class="mb-2">
+      <label for="leadership_name" class="form-label text-primary"
+        >{{ form.leadership_name.label }}</label
+      >
+      {{form.leadership_name(class="form-control", type="text",
+      id="leadership_name")}} {% for error in form.leadership_name.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="leadership_titles" class="form-label text-primary"
+        >{{ form.leadership_titles.label }}</label
+      >
+      {{form.leadership_titles(class="form-control", type="text",
+      id="leadership_titles")}} {% for error in form.leadership_titles.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="leadership_logo" class="form-label text-primary"
+        >{{ form.leadership_logo.label }}</label
+      >
+      {{form.leadership_logo(class="form-control", type="text",
+      id="leadership_logo")}} {% for error in form.leadership_logo.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="leadership_position" class="form-label text-primary"
+        >{{ form.leadership_position.label }}</label
+      >
+      {{form.leadership_position(class="form-control", type="text",
+      id="leadership_position")}} {% for error in
+      form.leadership_position.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mt-3 mb-1 form-check">
+      {{ form.is_management(type="checkbox", id="is_management",
+      class="form-check-input")}}
+      <label class="form-label text-primary" for="upcoming_event"
+        >{{ form.is_management.label}}</label
+      >
+    </div>
+
+    <div class="mb-2">
+      <label for="leadership_body" class="form-label text-primary"
+        >{{ form.leadership_body.label }}</label
+      >
+      {{form.leadership_body(class="form-control", rows=10,
+      id="leadership_body")}} {% for error in form.leadership_body.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    {{ form.submit(type="submit", class="mt-3 btn btn-primary")}}
+  </form>
+</div>
+
+{% endblock %}

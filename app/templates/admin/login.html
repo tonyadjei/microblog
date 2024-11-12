@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<h3 class="text-center text-primary mb-5">Admin Dashboard Login</h3>
+<div class="mx-auto" style="max-width: 300px">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 border-success-subtle bg-success-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <div class="mb-2">
+      <label class="form-label text-primary" for="username"
+        >{{ form.username.label }}</label
+      >
+      {{ form.username(placeholder='username', type="text",
+      class="form-control", id="username") }} {% for error in
+      form.username.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-primary" for="password"
+        >{{ form.password.label }}</label
+      >
+      {{ form.password(placeholder="password", type="password",
+      class="form-control", id="password") }} {% for error in
+      form.password.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-2 form-check">
+      {{ form.remember_me(type="checkbox", id="remember_me",
+      class="form-check-input")}}
+      <label class="form-label text-primary" for="remember_me"
+        >{{ form.remember_me.label}}</label
+      >
+    </div>
+    {{ form.submit(type="submit", class="btn btn-primary") }}
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<h3 class="text-center text-primary mb-5">
+  <i class="bi bi-pencil me-3" style="font-size: large"></i>Carousel Item
+</h3>
+
+<div class="mx-auto container-sm">
+  <form
+    novalidate
+    action=""
+    method="post"
+    class="p-3 border rounded-3 bg-primary-subtle border-primary-subtle"
+  >
+    {{ form.hidden_tag() }}
+    <div class="mb-2">
+      <label for="section_title" class="form-label text-primary"
+        >{{ form.section_title.label }}</label
+      >
+      {{form.section_title(class="form-control", type="text",
+      id="section_title")}} {% for error in form.section_title.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="mb-2">
+      <label for="section_image_path" class="form-label text-primary"
+        >{{ form.section_image_path.label }}</label
+      >
+      {{form.section_image_path(class="form-control", type="text",
+      id="section_image_path")}} {% for error in form.section_image_path.errors
+      %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </div>
+    {{ form.submit(type="submit", class="mt-3 btn btn-primary")}}
+  </form>
+</div>
+
+{% endblock %}
