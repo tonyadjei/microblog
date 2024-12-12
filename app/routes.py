@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+from webbrowser import get
 from flask import flash, redirect, render_template, request, url_for
 from urllib.parse import urlparse
 from flask_login import current_user, login_required, login_user, logout_user
@@ -455,8 +456,8 @@ def about_us_section():
                 about_us_section_data.section_our_values_title
             )
 
-        mission_items = MissionItems.query.all()
-        values_items = ValuesItems.query.all()
+    mission_items = MissionItems.query.all()
+    values_items = ValuesItems.query.all()
 
     return render_template(
         "admin/about_us/about_us_section.html",

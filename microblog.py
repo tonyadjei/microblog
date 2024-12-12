@@ -7,6 +7,7 @@ from app.models import (
     MissionItems,
     ValuesItems,
     Leadership,
+    FeaturedArticle,
 )
 
 
@@ -21,4 +22,5 @@ def make_shell_context():
         "MissionItems": MissionItems,
         "ValueItems": ValuesItems,
         "Leadership": Leadership,
+        "FeaturedArticle": FeaturedArticle,
     }

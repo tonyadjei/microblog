@@ -53,9 +53,5 @@ if not app.debug:
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
 
-    app.logger.setLevel(logging.INFO)
-    # create an example log using the app.logger object
-    app.logger.info("CSDD web app is running!")
-
 
 from app import routes, models, errors, api

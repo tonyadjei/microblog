@@ -149,7 +149,7 @@ class OurImpact(db.Model):
 class AboutUsSection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     section_about_us_title = db.Column(db.String(150))
-    section_about_us_body = db.Column(db.String(400))
+    section_about_us_body = db.Column(db.String(1000))
     section_about_us_image_path = db.Column(db.String(255))
     section_mission_title = db.Column(db.String(150))
     section_mission_image_path = db.Column(db.String(255))

@@ -32,6 +32,7 @@ def our_impact():
 @app.route("/api/homepage/featured-article")
 def featured_article():
     data = FeaturedArticle.query.first()
+    kk = FeaturedArticle.query.all()
     return jsonify(data.to_dict())  # type: ignore
 
 

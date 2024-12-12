@@ -97,7 +97,7 @@ class AboutUsSectionForm(FlaskForm):
         "About Us Section Title", validators=[Length(min=5, max=150)]
     )
     section_about_us_body = TextAreaField(
-        "About Us Body", validators=[Length(min=0, max=400)]
+        "About Us Body", validators=[Length(min=0, max=1000)]
     )
     section_about_us_image_path = StringField(
         "Upload About Us Section Image Path", validators=[Length(min=0, max=255)]
