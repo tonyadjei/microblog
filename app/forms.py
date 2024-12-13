@@ -114,9 +114,11 @@ class AboutUsSectionForm(FlaskForm):
     section_our_vision_body = TextAreaField(
         "Our Vision Body", validators=[Length(min=0, max=400)]
     )
-    section_vision_image = StringField(
-        "Upload Vision Section Image Path", validators=[Length(min=5, max=150)]
-    )
+    # code below gives an error (not yet fixed)
+    # section_vision_image = StringField(
+    #     "Upload Vision Section Image Path",
+
+    # )
     section_our_values_title = StringField(
         "Our Values Section Title", validators=[Length(min=5, max=150)]
     )

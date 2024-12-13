@@ -39,9 +39,9 @@
                 role="button"
                 class="btn btn-danger btn-sm"
                 data-bs-toggle="modal"
-                data-bs-target="#deleteModal"
+                data-bs-target="#deleteModal2"
                 data-id="{{data.id}}"
-                onclick="handleDeleteClick(event);"
+                onclick="handleDeleteClick2(event);"
               >
                 <i class="bi bi-trash-fill" style="font-size: small"></i>
               </a>
@@ -57,9 +57,9 @@
 <!-- Modal for Delete Operation -->
 <div
   class="modal fade"
-  id="deleteModal"
+  id="deleteModal2"
   tabindex="-1"
-  aria-labelledby="deleteModalLabel"
+  aria-labelledby="deleteModalLabel2"
   aria-hidden="true"
 >
   <div class="modal-dialog">
@@ -83,7 +83,7 @@
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
           Close
         </button>
-        <a id="deleteLink" role="button" class="btn btn-danger"
+        <a id="deleteLink2" role="button" class="btn btn-danger"
           >Yes, delete data!</a
         >
       </div>
@@ -92,16 +92,16 @@
 </div>
 
 <script>
-  function handleDeleteClick(event) {
+  function handleDeleteClick2(event) {
     let link_id = event.target.dataset.id;
     if (link_id) {
       document
-        .getElementById('deleteLink')
+        .getElementById('deleteLink2')
         .setAttribute('href', `/our_values/delete/${link_id}`);
     } else {
       link_id = event.target.parentElement.dataset.id;
       document
-        .getElementById('deleteLink')
+        .getElementById('deleteLink2')
         .setAttribute('href', `/our_values/delete/${link_id}`);
     }
   }

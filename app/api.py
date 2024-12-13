@@ -38,7 +38,6 @@ def featured_article():
 
 @app.route("/api/about-us/all-data")
 def about_us():
-
     about_us_data = AboutUsSection.query.first()
     about_us_data = about_us_data.to_dict()  # type: ignore
     mission_items_data = MissionItems.query.all()

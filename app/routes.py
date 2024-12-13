@@ -421,7 +421,7 @@ def about_us_section():
                     "section_mission_image_path": form.section_mission_image_path.data,
                     "section_our_vision_title": form.section_our_vision_title.data,
                     "section_our_vision_body": form.section_our_vision_body.data,
-                    "section_vision_image": form.section_vision_image.data,
+                    # "section_vision_image": form.section_vision_image.data,
                     "section_our_values_title": form.section_our_values_title.data,
                 }
             )
@@ -451,7 +451,7 @@ def about_us_section():
             form.section_our_vision_body.data = (
                 about_us_section_data.section_our_vision_body
             )
-            form.section_vision_image = about_us_section_data.section_vision_image
+            # form.section_vision_image = about_us_section_data.section_vision_image
             form.section_our_values_title.data = (
                 about_us_section_data.section_our_values_title
             )
